@@ -1,0 +1,42 @@
+<resources>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+    <string name="pref_units_title">Units</string>
+    <string name="pref_blows_per_ave_title"># Blows for Average</string>
+    <string-array name="pref_units_list_titles">
+        <item>Metric</item>
+        <item>English</item>
+    </string-array>
+    <string-array name="pref_units_list_values">
+        <item>M</item>
+        <item>I</item>
+    </string-array>
+    <string-array name="pref_blows_per_ave_titles">
+        <item>10 Blows</item>
+        <item>20 Blows</item>
+        <item>50 Blows</item>
+        <item>100 Blows</item>
+        <item>Stroke/Mark</item>
+    </string-array>
+    <string-array name="pref_blows_per_ave_values">
+        <item>10</item>
+        <item>20</item>
+        <item>50</item>
+        <item>100</item>
+        <item>mark</item>
+    </string-array>
+    <string-array name="pref_example_list_titles">
+        <item>Metric</item>
+        <item>English</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+</resources>

@@ -1,0 +1,251 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bridge_bk"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:focusableInTouchMode="true"
+    android:id="@+id/pileDriving">
+
+    <SeekBar
+        android:id="@+id/sbVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="@integer/Sensitivity_Max"
+        android:maxHeight="13dp"
+        android:minHeight="13dp"
+        android:progress="@integer/Sensitivity_Default"
+        android:thumb="@drawable/volume_btn"
+        android:layout_below="@+id/tvLast10Label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp" />
+
+    <TextView
+        android:id="@+id/tvMicVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/micVolume"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FFF"
+        android:singleLine="false"
+        android:paddingLeft="15dp"
+        android:layout_alignBottom="@+id/sbVolume"
+        android:layout_alignLeft="@+id/sbVolume"
+        android:layout_alignStart="@+id/sbVolume"
+        android:layout_marginBottom="40dp" />
+    <TextView
+        android:id="@id/tvMicVolumeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FFF"
+        android:singleLine="false"
+        android:text="50%"
+        android:layout_alignTop="@+id/tvMicVolume"
+        android:layout_toLeftOf="@+id/btnRecord"
+        android:layout_toStartOf="@+id/btnRecord" />
+
+    <ImageButton
+        android:id="@+id/btnRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:src="@drawable/redbtn"
+        android:adjustViewBounds="false"
+        android:layout_below="@+id/btnSendEmail"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/tvMiniLog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:fontFamily="courier"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFF"
+        android:textSize="14sp"
+        android:width="400dp"
+        android:height="100dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/btnPause"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSendEmail"
+        android:src="@drawable/send_email"
+        android:background="@android:color/transparent"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/btnShowLog" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnShowLog"
+        android:src="@drawable/show_log"
+        android:background="@android:color/transparent"
+        android:layout_below="@+id/sbVolume"
+        android:layout_marginTop="4dp"
+        android:layout_alignStart="@id/sbVolume"
+        android:layout_marginLeft="26dp"
+        android:layout_alignLeft="@+id/sbVolume" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnMarkBlow"
+        android:src="@drawable/mark_blow"
+        android:background="@android:color/transparent"
+        android:layout_alignRight="@+id/sbVolume"
+        android:layout_alignEnd="@+id/sbVolume"
+        android:layout_alignTop="@+id/btnShowLog"
+        android:layout_marginRight="26dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Blows/Unit"
+        android:id="@+id/tvBlowsPerUnitLabel"
+        android:textColor="#FFF"
+        android:layout_alignRight="@+id/tvLastBlowLabel"
+        android:layout_alignEnd="@+id/tvLastBlowLabel"
+        android:layout_below="@+id/tvBlowsPerMinLabel"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/tvBlowsPerMinLabel"
+        android:text="@string/blows_per_min"
+        android:textColor="#FFF"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/tvBlowsPerUnitLabel"
+        android:layout_alignEnd="@+id/tvBlowsPerUnitLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvBlowsPerMinDisplay"
+        android:layout_alignTop="@+id/tvBlowsPerMinLabel"
+        android:layout_alignLeft="@+id/tvLastBlowDisplay"
+        android:layout_alignStart="@+id/tvLastBlowDisplay"
+        android:textColor="#FFF"
+        android:layout_alignRight="@+id/tvBlowsPerUnitDisplay"
+        android:layout_alignEnd="@+id/tvBlowsPerUnitDisplay"
+        android:layout_above="@+id/tvBlowsPerUnitDisplay"
+        android:textAlignment="textStart"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:text="----" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvBlowsPerUnitDisplay"
+        android:layout_alignTop="@+id/tvBlowsPerUnitLabel"
+        android:layout_alignLeft="@+id/tvLastBlowDisplay"
+        android:layout_alignStart="@+id/tvLastBlowDisplay"
+        android:textColor="#FFF"
+        android:layout_above="@+id/tvLastBlowDisplay"
+        android:layout_alignRight="@+id/tvLastBlowDisplay"
+        android:layout_alignEnd="@+id/tvLastBlowDisplay"
+        android:textAlignment="textStart"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:text="----" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPause"
+        android:layout_toLeftOf="@+id/btnRecord"
+        android:layout_toStartOf="@+id/btnRecord"
+        android:src="@drawable/ic_pause_off"
+        android:background="@android:color/transparent"
+        android:layout_alignBottom="@+id/btnRecord" />
+
+    <TextView
+        android:id="@+id/tvLastBlowDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="impact"
+        android:textAllCaps="false"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:width="400dp"
+        android:layout_alignLeft="@+id/tvLast10Display"
+        android:layout_alignStart="@+id/tvLast10Display"
+        android:layout_alignTop="@+id/tvLastBlowLabel"
+        android:layout_above="@+id/tvLast10Display"
+        android:textAlignment="textStart"
+        android:text="----" />
+
+    <TextView
+        android:id="@+id/tvLast10Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/last_10_ave"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FFF"
+        android:layout_below="@+id/tvLastBlowLabel"
+        android:layout_toLeftOf="@+id/btnSendEmail"
+        android:layout_toStartOf="@+id/btnSendEmail" />
+
+    <TextView
+        android:id="@+id/tvLast10Display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="impact"
+        android:maxLines="11"
+        android:scrollbars="vertical"
+        android:textAllCaps="false"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:width="400dp"
+        android:layout_alignTop="@+id/tvLast10Label"
+        android:layout_alignRight="@+id/sbVolume"
+        android:layout_alignEnd="@+id/sbVolume"
+        android:layout_toRightOf="@+id/btnSendEmail"
+        android:layout_toEndOf="@+id/btnSendEmail"
+        android:textAlignment="textStart"
+        android:text="----" />
+
+    <TextView
+        android:id="@+id/tvLastBlowLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/last_Blow"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FFF"
+        android:layout_alignRight="@+id/tvLast10Label"
+        android:layout_alignEnd="@+id/tvLast10Label"
+        android:layout_below="@+id/tvBlowsPerUnitLabel"
+        android:layout_marginTop="20dp" />
+
+
+</RelativeLayout>
